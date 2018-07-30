@@ -1,8 +1,7 @@
-const tape = require('tape')
-const print = require('./')
+const test = require('tape')
+const libyosys = require('./')
 
-tape('does not crash', function (t) {
-  print('hello from test')
-  t.pass('did not crash')
+test('return Hello World', function (t) {
+  t.equal(libyosys.hello(), 'Hello World')
   t.end()
 })
