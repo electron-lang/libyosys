@@ -1,6 +1,6 @@
 {
   "name": "libyosys",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Multiplatform node bindings for libyosys.",
   "main": "index.js",
   "repository": "https://github.com/electron-lang/libyosys",
