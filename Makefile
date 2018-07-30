@@ -5,6 +5,6 @@ update-yosys:
 	git submodule foreach git pull origin master
 
 build-yosys: update-yosys
-	cd yosys-src && echo "ENABLE_LIBYOSYS=1" >> Makefile.conf && make
+	cd yosys-src && echo "ENABLE_LIBYOSYS=1" > Makefile.conf && make
 
 all: build-yosys

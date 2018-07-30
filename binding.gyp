@@ -1,8 +1,8 @@
 {
   "targets": [{
     "target_name": "libyosys_napi",
-    "cflags!": [ "-fno-exceptions" ],
-    "cflags_cc!": [ "-fno-exceptions" ],
+    "cflags": [ "-fexceptions" ],
+    "cflags_cc": [ "-fexceptions" ],
     "sources": [
       "libyosys_napi.cpp"
     ],
@@ -10,7 +10,7 @@
       "<!@(node -p \"require('node-addon-api').include\")",
       "yosys-src"
     ],
-    "defines": [ "NAPI_DISABLE_CPP_EXCEPTIONS", "_YOSYS_" ],
+    "defines": [ "NAPI_CPP_EXCEPTIONS", "_YOSYS_" ],
     "link_settings": {
       "libraries": [
         "-lyosys",

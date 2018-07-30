@@ -1,0 +1,156 @@
+{
+  "modules": {
+    "$and": {
+      "ports": {
+        "A": {
+          "direction": "input",
+          "bits": [
+            6,
+            7
+          ],
+          "attributes": {
+            "src": {
+              "startLine": 9,
+              "startColumn": 18,
+              "endLine": 9,
+              "endColumn": 18
+            }
+          }
+        },
+        "B": {
+          "direction": "input",
+          "bits": [
+            8,
+            9,
+            10
+          ],
+          "attributes": {
+            "src": {
+              "startLine": 10,
+              "startColumn": 18,
+              "endLine": 10,
+              "endColumn": 18
+            }
+          }
+        },
+        "Y": {
+          "direction": "output",
+          "bits": [
+            11
+          ],
+          "attributes": {
+            "src": {
+              "startLine": 11,
+              "startColumn": 10,
+              "endLine": 11,
+              "endColumn": 10
+            }
+          }
+        }
+      },
+      "cells": {},
+      "netnames": {},
+      "attributes": {
+        "declare": true,
+        "src": {
+          "startLine": 7,
+          "startColumn": 16,
+          "endLine": 7,
+          "endColumn": 19
+        }
+      }
+    },
+    "AND": {
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [
+            0,
+            1
+          ],
+          "attributes": {
+            "src": {
+              "startLine": 21,
+              "startColumn": 12,
+              "endLine": 21,
+              "endColumn": 12
+            }
+          }
+        },
+        "b": {
+          "direction": "input",
+          "bits": [
+            2,
+            3,
+            4
+          ],
+          "attributes": {
+            "src": {
+              "startLine": 22,
+              "startColumn": 12,
+              "endLine": 22,
+              "endColumn": 12
+            }
+          }
+        },
+        "y": {
+          "direction": "output",
+          "bits": [
+            5
+          ],
+          "attributes": {
+            "src": {
+              "startLine": 23,
+              "startColumn": 10,
+              "endLine": 23,
+              "endColumn": 10
+            }
+          }
+        }
+      },
+      "cells": {
+        "and1": {
+          "type": "$and",
+          "parameters": {
+            "A_WIDTH": 2,
+            "B_WIDTH": 3,
+            "Y_WIDTH": 1,
+            "A_SIGNED": false,
+            "B_SIGNED": false
+          },
+          "connections": {
+            "A": [
+              0,
+              1
+            ],
+            "B": [
+              2,
+              3,
+              4
+            ],
+            "Y": [
+              5
+            ]
+          },
+          "attributes": {
+            "src": {
+              "startLine": 24,
+              "startColumn": 8,
+              "endLine": 24,
+              "endColumn": 11
+            }
+          }
+        }
+      },
+      "netnames": {},
+      "attributes": {
+        "src": {
+          "startLine": 20,
+          "startColumn": 8,
+          "endLine": 20,
+          "endColumn": 10
+        }
+      }
+    }
+  }
+}

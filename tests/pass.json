@@ -1,0 +1,61 @@
+{
+  "modules": {
+    "AND": {
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [
+            0,
+            1
+          ],
+          "attributes": {}
+        },
+        "b": {
+          "direction": "input",
+          "bits": [
+            2,
+            3,
+            4
+          ],
+          "attributes": {}
+        },
+        "y": {
+          "direction": "output",
+          "bits": [
+            5
+          ],
+          "attributes": {}
+        }
+      },
+      "cells": {
+        "and1": {
+          "type": "$and",
+          "parameters": {
+            "A_WIDTH": 2,
+            "B_WIDTH": 3,
+            "Y_WIDTH": 1,
+            "A_SIGNED": 0,
+            "B_SIGNED": 0
+          },
+          "connections": {
+            "A": [
+              0,
+              1
+            ],
+            "B": [
+              2,
+              3,
+              4
+            ],
+            "Y": [
+              5
+            ]
+          },
+          "attributes": {}
+        }
+      },
+      "netnames": {},
+      "attributes": {}
+    }
+  }
+}

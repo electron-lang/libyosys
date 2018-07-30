@@ -2,45 +2,42 @@
 #include <kernel/yosys.h>
 
 namespace libyosys_napi {
-  std::string hello();
-  Napi::String HelloWrapped(const Napi::CallbackInfo& info);
-
-  int add(int a, int b);
-  Napi::Number AddWrapped(const Napi::CallbackInfo& info);
+  Napi::Value SetupWrapped(const Napi::CallbackInfo& info);
+  Napi::Value RunPassWrapped(const Napi::CallbackInfo& info);
+  Napi::Value ShutdownWrapped(const Napi::CallbackInfo& info);
 }
 
-std::string libyosys_napi::hello() {
-  return "Hello World";
-}
-
-Napi::String libyosys_napi::HelloWrapped(const Napi::CallbackInfo& info) {
+Napi::Value libyosys_napi::SetupWrapped(const Napi::CallbackInfo& info) {
   Napi::Env env = info.Env();
-  Napi::String returnValue = Napi::String::New(env, hello());
-
-  return returnValue;
+  Yosys::log_streams.push_back(&std::cout);
+  Yosys::log_error_stderr = true;
+  Yosys::yosys_setup();
+  return env.Null();
 }
 
-int libyosys_napi::add(int a, int b) {
-  return a + b;
-}
-
-Napi::Number libyosys_napi::AddWrapped(const Napi::CallbackInfo& info) {
+Napi::Value libyosys_napi::RunPassWrapped(const Napi::CallbackInfo& info) {
   Napi::Env env = info.Env();
-  if (info.Length() < 2 || !info[0].IsNumber() || !info[1].IsNumber()) {
-    Napi::TypeError::New(env, "Number expected").ThrowAsJavaScriptException();
+  if (info.Length() != 1 || !info[0].IsString()) {
+    Napi::TypeError::New(env, "String expected").ThrowAsJavaScriptException();
+    return env.Null();
   }
 
-  Napi::Number first = info[0].As<Napi::Number>();
-  Napi::Number second = info[1].As<Napi::Number>();
+  Napi::String command = info[0].As<Napi::String>();
 
-  int returnValue = libyosys_napi::add(first.Int32Value(), second.Int32Value());
+  Yosys::run_pass(command, nullptr);
+  return env.Null();
+}
 
-  return Napi::Number::New(env, returnValue);
+Napi::Value libyosys_napi::ShutdownWrapped(const Napi::CallbackInfo& info) {
+  Napi::Env env = info.Env();
+  Yosys::yosys_shutdown();
+  return env.Null();
 }
 
 Napi::Object InitAll(Napi::Env env, Napi::Object exports) {
-  exports.Set("hello", Napi::Function::New(env, libyosys_napi::HelloWrapped));
-  exports.Set("add", Napi::Function::New(env, libyosys_napi::AddWrapped));
+  exports.Set("setup", Napi::Function::New(env, libyosys_napi::SetupWrapped));
+  exports.Set("run", Napi::Function::New(env, libyosys_napi::RunPassWrapped));
+  exports.Set("shutdown", Napi::Function::New(env, libyosys_napi::ShutdownWrapped));
 
   return exports;
 }
