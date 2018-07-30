@@ -17,7 +17,7 @@
     "tape": "^4.9.1"
   },
   "scripts": {
-    "prepare": "node-gyp-build",
+    "prepare": "node-gyp-build || true",
     "build": "rm -rf build && make build-yosys && node-gyp-build",
     "test": "standard && tape tests/test.js",
     "prebuild": "rm -rf build && make build-yosys && prebuildify --napi",
