@@ -1292,7 +1292,7 @@ prebuildify-ci@^1.0.2:
 
 "prebuildify-load@git+https://git@github.com/dvc94ch/prebuildify-load.git":
   version "1.0.1"
-  resolved "git+https://git@github.com/dvc94ch/prebuildify-load.git#a3ab855136e22480bf24cd03c284db6749f0a12d"
+  resolved "git+https://git@github.com/dvc94ch/prebuildify-load.git#9e66f7d2a1768a6b8efde53aa5fd3940d0adda23"
 
 prebuildify@^2.7.0:
   version "2.7.0"
