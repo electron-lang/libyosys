@@ -1,6 +1,6 @@
 {
   "name": "libyosys",
-  "version": "0.0.1",
+  "version": "0.0.1-1",
   "description": "Multiplatform node bindings for libyosys.",
   "main": "index.js",
   "repository": "https://github.com/electron-lang/libyosys",
@@ -12,20 +12,25 @@
   },
   "devDependencies": {
     "prebuildify": "^2.7.0",
+    "prebuildify-ci": "^1.0.2",
     "standard": "^11.0.1",
     "tape": "^4.9.1"
   },
   "scripts": {
-    "install": "yarn clean && yarn build-yosys && yarn build-napi",
-    "clean": "rm -rf build",
-    "build-yosys": "make build-yosys",
-    "build-napi": "node-gyp-build",
+    "prepare": "node-gyp-build",
+    "build": "rm -rf build && make build-yosys && node-gyp-build",
     "test": "standard && tape tests/test.js",
-    "prebuild": "prebuildify --napi"
+    "prebuild": "rm -rf build && make build-yosys && prebuildify --napi",
+    "prepublishOnly": "prebuildify-ci download"
   },
   "standard": {
     "ignore": [
       "yosys-src/"
     ]
-  }
+  },
+  "files": [
+    "index.js",
+    "index.d.js",
+    "prebuilds"
+  ]
 }
