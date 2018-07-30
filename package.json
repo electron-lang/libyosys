@@ -15,7 +15,7 @@
     "tape": "^4.9.1"
   },
   "scripts": {
-    "install": "node-gyp-build",
+    "install": "make build-yosys && node-gyp-build",
     "test": "standard && tape test.js",
     "prebuild": "prebuildify --napi"
   },
