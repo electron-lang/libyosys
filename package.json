@@ -1,0 +1,27 @@
+{
+  "name": "libyosys",
+  "version": "1.0.0",
+  "description": "Multiplatform node bindings for libyosys.",
+  "main": "index.js",
+  "repository": "https://github.com/electron-lang/libyosys",
+  "author": "David Craven <david@craven.ch>",
+  "license": "ISC",
+  "dependencies": {
+    "node-gyp-build": "^3.4.0"
+  },
+  "devDependencies": {
+    "prebuildify": "^2.7.0",
+    "standard": "^11.0.1",
+    "tape": "^4.9.1"
+  },
+  "scripts": {
+    "install": "node-gyp-build",
+    "test": "standard && tape test.js",
+    "prebuild": "prebuildify --napi"
+  },
+  "standard": {
+    "ignore": [
+      "yosys-src/"
+    ]
+  }
+}
