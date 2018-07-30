@@ -8,7 +8,7 @@
   "license": "ISC",
   "dependencies": {
     "node-addon-api": "^1.4.0",
-    "node-gyp-build": "^3.4.0"
+    "prebuildify-load": "^1.0.1"
   },
   "devDependencies": {
     "prebuildify": "^2.7.0",
@@ -17,10 +17,9 @@
     "tape": "^4.9.1"
   },
   "scripts": {
-    "prepare": "node-gyp-build || true",
-    "build": "rm -rf build && make build-yosys && node-gyp-build",
+    "install": "prebuildify-load || make",
     "test": "standard && tape tests/test.js",
-    "prebuild": "rm -rf build && make build-yosys && prebuildify --napi",
+    "prebuild": "prebuildify --napi",
     "prepublishOnly": "prebuildify-ci download"
   },
   "standard": {

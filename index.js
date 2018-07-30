@@ -1,3 +1,3 @@
-const binding = require('node-gyp-build')(__dirname)
+const binding = require('prebuildify-load')(__dirname)
 
 module.exports = binding

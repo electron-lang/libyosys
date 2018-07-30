@@ -1112,10 +1112,6 @@ node-addon-api@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/node-addon-api/-/node-addon-api-1.4.0.tgz#4c43e4c1ed8fbf3176ce71003f352329adad87eb"
 
-node-gyp-build@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.npmjs.org/node-gyp-build/-/node-gyp-build-3.4.0.tgz#f8f62507e65f152488b28aac25d04b9d79748cf7"
-
 normalize-package-data@^2.3.2:
   version "2.4.0"
   resolved "https://registry.npmjs.org/normalize-package-data/-/normalize-package-data-2.4.0.tgz#12f95a307d58352075a04907b84ac8be98ac012f"
@@ -1293,6 +1289,10 @@ prebuildify-ci@^1.0.2:
     rimraf "^2.6.2"
     tar-fs "^1.16.0"
     unzip "^0.1.11"
+
+prebuildify-load@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/prebuildify-load/-/prebuildify-load-1.0.1.tgz#c46e571f0b2b94d619775c9d4ea5719a2b884950"
 
 prebuildify@^2.7.0:
   version "2.7.0"
