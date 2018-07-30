@@ -1,6 +1,6 @@
 {
   "name": "libyosys",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Multiplatform node bindings for libyosys.",
   "main": "index.js",
   "repository": "https://github.com/electron-lang/libyosys",
@@ -20,8 +20,7 @@
     "install": "prebuildify-load || make",
     "build": "make",
     "test": "standard && tape tests/test.js",
-    "prebuild": "prebuildify --napi",
-    "prepublishOnly": "prebuildify-ci download"
+    "prebuild": "prebuildify --napi"
   },
   "standard": {
     "ignore": [
