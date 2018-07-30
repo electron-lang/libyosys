@@ -3,8 +3,6 @@ build: false
 skip_branch_with_pr: true
 
 environment:
-  CYG_MIRROR: http://cygwin.mirror.constant.com
-  CYG_PACKAGES: make,gawk
   matrix:
     - nodejs_version: "Current"
 
