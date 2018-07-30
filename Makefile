@@ -9,6 +9,8 @@ update-yosys:
 build-yosys: update-yosys
 	echo "ENABLE_LIBYOSYS=1" > yosys-src/Makefile.conf
 	echo "ENABLE_TCL=0" >> yosys-src/Makefile.conf
+	echo "ENABLE_ABC=0" >> yosys-src/Makefile.conf
+	echo "ENABLE_READLINE=0" >> yosys-src/Makefile.conf
 	cd yosys-src && make
 
 build-yosys-napi: build-yosys
