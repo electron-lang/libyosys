@@ -1290,9 +1290,9 @@ prebuildify-ci@^1.0.2:
     tar-fs "^1.16.0"
     unzip "^0.1.11"
 
-prebuildify-load@^1.0.1:
+"prebuildify-load@git+https://git@github.com/dvc94ch/prebuildify-load.git":
   version "1.0.1"
-  resolved "https://registry.npmjs.org/prebuildify-load/-/prebuildify-load-1.0.1.tgz#c46e571f0b2b94d619775c9d4ea5719a2b884950"
+  resolved "git+https://git@github.com/dvc94ch/prebuildify-load.git#a3ab855136e22480bf24cd03c284db6749f0a12d"
 
 prebuildify@^2.7.0:
   version "2.7.0"
