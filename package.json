@@ -15,7 +15,8 @@
     "tape": "^4.9.1"
   },
   "scripts": {
-    "install": "make build-yosys && node-gyp-build",
+    "install": "make build-yosys && node-gyp-build && yarn run copy-libyosys",
+    "copy-libyosys": "mkdir -p build/Release && cp yosys-src/libyosys.so build/Release",
     "test": "standard && tape test.js",
     "prebuild": "prebuildify --napi"
   },
