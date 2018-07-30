@@ -16,11 +16,10 @@
     "tape": "^4.9.1"
   },
   "scripts": {
-    "install": "yarn clean && yarn build-yosys && yarn build-napi && yarn copy-libyosys",
+    "install": "yarn clean && yarn build-yosys && yarn build-napi",
     "clean": "rm -rf build",
     "build-yosys": "make build-yosys",
     "build-napi": "node-gyp-build",
-    "copy-libyosys": "cp yosys-src/libyosys.so build/Release",
     "test": "standard && tape tests/test.js",
     "prebuild": "prebuildify --napi"
   },

@@ -20,6 +20,13 @@
       "library_dirs": [
         "../yosys-src",
       ],
-    }
+    },
+    "copies":
+    [
+      {
+        "destination": "<(module_root_dir)/build/Release",
+        "files": ["<(module_root_dir)/yosys-src/libyosys.so"]
+      }
+    ]
   }]
 }
